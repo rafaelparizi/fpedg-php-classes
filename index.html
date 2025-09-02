@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas de Desenvolvimento Backend - Versão Multimídia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/monokai.min.css">
+    <style>
+        .reveal .slides section .code-wrapper {
+            width: 100%;
+            overflow: hidden;
+        }
+        .reveal .slides section pre {
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .reveal .slides section pre code {
+            max-height: 550px;
+            font-size: 0.75em;
+        }
+        .reveal h4 {
+            color: #42affa;
+        }
+        .reveal .slide-image {
+            max-height: 450px;
+            border-radius: 10px;
+            margin-top: 20px;
+            background: #fff; /* Fundo branco para imagens com transparência */
+            padding: 10px;
+        }
+        .reveal .video-list {
+            list-style-type: none;
+        }
+        .reveal .video-list li {
+            margin: 15px 0;
+        }
+        .reveal .video-list a {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>Desenvolvimento Backend</h2>
+                <h4>Versão Multimídia</h4>
+                <p>PHP & MySQL</p>
+                <p><small>Material de Aula</small></p>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Aula 1</h3>
+                    <h2>29/09/2025</h2>
+                    <h4>Introdução ao Desenvolvimento Backend</h4>
+                </section>
+                <section>
+                    <h4>Turma 30: O Ambiente de Desenvolvimento</h4>
+                    <p>Para programar em PHP, precisamos de um "servidor" em nossa máquina.</p>
+                    <ul>
+                        <li>Usaremos o <strong>XAMPP</strong> (ou similar: WAMP, MAMP).</li>
+                        <li><strong>A</strong>pache: O programa que atua como Servidor Web.</li>
+                        <li><strong>M</strong>ySQL: O programa do Banco de Dados.</li>
+                        <li><strong>P</strong>HP: A linguagem que processa a lógica.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Ferramenta: Painel de Controle do XAMPP</h4>
+                    <p>É aqui que iniciamos e paramos os serviços Apache e MySQL.</p>
+                    <img src="https://rafaelit.com.br/wp-content/uploads/2013/02/xampp2.jpg" alt="Painel de Controle do XAMPP" class="slide-image">
+                </section>
+                <section>
+                    <h4>Turma 30: Sintaxe Básica do PHP</h4>
+                    <p>O código PHP é inserido em blocos dentro do HTML.</p>
+                    <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+&lt;?php
+    // Comentário de uma linha
+    /* Comentário de múltiplas linhas */
+
+    // Comandos terminam com ponto e vírgula
+    echo "Olá do PHP!";
+?&gt;
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h4>Turma 30: Variáveis e Tipos de Dados</h4>
+                    <p>Variáveis guardam informações. Em PHP, começam com `$`. </p>
+                    <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+&lt;?php
+$texto = "Sou uma string";      // String (texto)
+$ano = 2025;                    // Integer (número inteiro)
+$preco = 49.99;                 // Float (número com decimal)
+$disponivel = true;             // Boolean (verdadeiro/falso)
+
+echo "O preço do produto é R$ " . $preco; // O "." concatena (junta) textos
+?&gt;
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h4>Turma 31: O Modelo Cliente-Servidor</h4>
+                    <p>A web funciona com base em requisições e respostas entre o seu navegador (cliente) e um computador remoto (servidor).</p>
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Client-server-model.svg/1024px-Client-server-model.svg.png" alt="Modelo Cliente-Servidor" class="slide-image" style="max-height: 400px; background: none; padding: 0;">
+                </section>
+                <section>
+                    <h4>Turma 31: Verbos HTTP - A Intenção do Pedido</h4>
+                    <p>Cada requisição HTTP tem um "verbo" que indica sua finalidade.</p>
+                    <ul>
+                        <li><strong>GET:</strong> Usado para <strong>solicitar/buscar</strong> dados (ex: acessar um site).</li>
+                        <li><strong>POST:</strong> Usado para <strong>enviar/criar</strong> dados (ex: enviar um formulário de login).</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Vídeos para Estudo (Aula 1)</h4>
+                    <ul class="video-list">
+                        <li>
+                            <p><strong>O que é PHP?</strong></p>
+                            <a href="https://www.youtube.com/watch?v=F7KzJ7e6EAc" target="_blank">Curso de PHP para Iniciantes - Gustavo Guanabara</a>
+                        </li>
+                        <li class="fragment">
+                            <p><strong>O que é Backend?</strong></p>
+                            <a href="https://www.youtube.com/watch?v=cDe_0JYgbVY" target="_blank">Back-End — Uma Visão Geral Básica</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Aula 2</h3>
+                    <h2>06/10/2025</h2>
+                    <h4>Criação de Banco de Dados com MySQL</h4>
+                </section>
+                <section>
+                    <h4>Linguagem SQL: DDL vs. DML</h4>
+                    <p>O SQL tem "sub-linguagens" para diferentes tarefas:</p>
+                    <ul>
+                        <li><strong>DDL (Data Definition Language):</strong> Para <strong>definir</strong> a estrutura (`CREATE`, `ALTER`, `DROP`).</li>
+                        <li><strong>DML (Data Manipulation Language):</strong> Para <strong>manipular</strong> os dados (`INSERT`, `UPDATE`, `DELETE`, `SELECT`).</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Ferramenta: phpMyAdmin</h4>
+                    <p>É uma interface web que vem com o XAMPP para gerenciar o MySQL. Aqui executamos nossos comandos SQL.</p>
+                     <img src="https://locallhost.me/assets/img/pages/phpmyadmin.jpg" alt="Interface do phpMyAdmin" class="slide-image">
+                </section>
+                <section>
+                    <h4>Exemplo DDL: Criando a Estrutura</h4>
+                    <p>Comando `CREATE` para definir nossa tabela de usuários.</p>
+                    <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h4>Exemplo DML: Inserindo e Selecionando Dados</h4>
+                    <p>Comandos `INSERT INTO` e `SELECT` para adicionar e ver os dados.</p>
+                    <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+-- Inserindo um novo usuário
+INSERT INTO usuarios (nome, email, senha) 
+VALUES ('Ana Silva', 'ana@email.com', 'senha123');
+
+-- Selecionando todos os usuários para visualização
+SELECT * FROM usuarios;
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h4>Vídeos para Estudo (Aula 2)</h4>
+                    <ul class="video-list">
+                        <li>
+                            <p><strong>O que é Banco de Dados?</strong></p>
+                            <a href="https://www.youtube.com/watch?v=FNz_eScY24I" target="_blank">Curso de Banco de Dados - Gustavo Guanabara</a>
+                        </li>
+                        <li class="fragment">
+                            <p><strong>Comandos DDL, DML, DCL</strong></p>
+                            <a href="https://www.youtube.com/watch?v=rePhhLFOf_M" target="_blank">Definições de DDL, DCL e DML</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h3>Aula 3</h3>
+                    <h2>13/10/2025</h2>
+                    <h4>Conexão do PHP com o Banco de Dados</h4>
+                </section>
+                <section>
+                    <h4>MySQLi: A Ponte entre PHP e MySQL</h4>
+                    <p>Vamos usar a abordagem <strong>Orientada a Objetos</strong> do MySQLi, que é mais moderna e organizada.</p>
+                    <p class="fragment">`$conexao = new mysqli();`</p>
+                </section>
+                <section>
+                    <h4>O Script de Conexão (`conexao.php`)</h4>
+                    <p>Um arquivo central para guardar as credenciais e criar a conexão.</p>
+                    <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+&lt;?php
+$servidor = "localhost";
+$usuario_db = "root";
+$senha_db = "";
+$banco = "minha_loja";
+
+$conexao = new mysqli($servidor, $usuario_db, $senha_db, $banco);
+
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
+}
+?&gt;
+                        </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h4>Executando uma Consulta e Lendo os Resultados</h4>
+                    <p>Após conectar, podemos enviar comandos SQL e ler as respostas.</p>
+                    <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+&lt;?php
+require 'conexao.php';
+
+$sql = "SELECT id, nome, email FROM usuarios";
+$resultado = $conexao->query($sql);
+
+if ($resultado->num_rows > 0) {
+    while($linha = $resultado->fetch_assoc()) {
+        echo "ID: " . $linha["id"]. " - Nome: " . $linha["nome"]. "&lt;br&gt;";
+    }
+} else {
+    echo "Nenhum usuário encontrado.";
+}
+$conexao->close();
+?&gt;
+                        </code></pre>
+                    </div>
+                </section>
+                 <section>
+                    <h4>Vídeos para Estudo (Aula 3)</h4>
+                    <ul class="video-list">
+                        <li>
+                            <p><strong>Conectando PHP com MySQLi</strong></p>
+                            <a href="https://www.youtube.com/watch?v=M-E1XsymqTs" target="_blank">Como conectar PHP com MySQLi?</a>
+                        </li>
+                        <li class="fragment">
+                            <p><strong>CRUD com PHP Orientado a Objetos (Avançado)</strong></p>
+                            <a href="https://www.youtube.com/watch?v=uG64BgrlX7o" target="_blank">CRUD com PHP OO, PDO e MySQL</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <section>
+                    <h3>Aula 4</h3>
+                    <h2>20/10/2025</h2>
+                    <h4>Formulário de Login e Autenticação</h4>
+                </section>
+                <section>
+                    <h4>O que são Sessões HTTP?</h4>
+                    <p>A solução para que o servidor "lembre" de um usuário entre diferentes páginas.</p>
+                    <ul>
+                        <li>`session_start()`: Inicia ou resume uma sessão.</li>
+                        <li>`$_SESSION`: Um array global para guardar informações do usuário logado.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Segurança: Nunca Armazene Senhas em Texto Puro!</h4>
+                    <p>A solução é usar <strong>Hashing</strong>, um processo que torna a senha indecifrável.</p>
+                    <ul>
+                        <li>`password_hash()`: Para criar o hash ao cadastrar um usuário.</li>
+                        <li>`password_verify()`: Para comparar a senha do login com o hash salvo no banco.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Segurança: Prevenindo SQL Injection</h4>
+                    <p>Um ataque onde um invasor insere comandos SQL maliciosos em um formulário. A solução é usar <strong>Prepared Statements</strong>.</p>
+                    <ol>
+                        <li>`prepare()`: Prepara a query com placeholders (`?`).</li>
+                        <li>`bind_param()`: Vincula as variáveis do usuário de forma segura.</li>
+                        <li>`execute()`: Executa a query.</li>
+                    </ol>
+                </section>
+                <section>
+                    <h4>Script de Autenticação SEGURO</h4>
+                    <p>Juntando Sessões, `password_verify()` e Prepared Statements.</p>
+                    <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+&lt;?php
+session_start();
+require 'conexao.php';
+
+$email = $_POST['email'];
+$senha_form = $_POST['senha'];
+
+$stmt = $conexao->prepare("SELECT id, nome, senha FROM usuarios WHERE email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$resultado = $stmt->get_result();
+
+if ($resultado->num_rows === 1) {
+    $usuario = $resultado->fetch_assoc();
+    
+    if (password_verify($senha_form, $usuario['senha'])) {
+        $_SESSION['usuario_id'] = $usuario['id'];
+        header("Location: painel.php");
+        exit();
+    }
+}
+echo "Email ou senha inválidos.";
+?&gt;
+                        </code></pre>
+                    </div>
+                </section>
+                 <section>
+                    <h4>Vídeos para Estudo (Aula 4)</h4>
+                    <ul class="video-list">
+                        <li>
+                            <p><strong>O que é SQL Injection?</strong></p>
+                            <a href="https://www.youtube.com/watch?v=MrVoMeQAx5g" target="_blank">Injeção SQL: tudo que você precisa saber</a>
+                        </li>
+                        <li class="fragment">
+                            <p><strong>Criptografia de Senhas com PHP</strong></p>
+                            <a href="https://www.youtube.com/watch?v=5URqPGmJWFM" target="_blank">Criptografia de Senhas PHP - password_hash</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            
+            <section>
+                <section>
+                    <h3>Aula 5</h3>
+                    <h2>03/11/2025</h2>
+                    <h4>Avaliação Prática e Revisão</h4>
+                </section>
+                <section>
+                    <h4>O Fluxo Completo da Autenticação</h4>
+                    <p>Login -> Autenticação -> Criação da Sessão -> Acesso a Páginas Restritas -> Logout -> Destruição da Sessão.</p>
+                </section>
+                <section>
+                    <h4>Protegendo uma Página (Análise do Código)</h4>
+                    <p>O `painel.php` verifica se a sessão existe antes de mostrar o conteúdo.</p>
+                     <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+&lt;?php
+session_start();
+
+// Se a variável 'usuario_id' NÃO FOI DEFINIDA na sessão...
+if (!isset($_SESSION['usuario_id'])) {
+    // ...redirecionamos para o login e paramos o script.
+    header("Location: login.html");
+    exit();
+}
+
+// Se o script continuar, o usuário está logado!
+echo "<h1>Bem-vindo ao seu painel!</h1>";
+?&gt;
+                        </code></pre>
+                     </div>
+                </section>
+                <section>
+                    <h4>Saindo do Sistema (Análise do Logout)</h4>
+                    <p>O `logout.php` faz a limpeza e destrói a sessão.</p>
+                     <div class="code-wrapper">
+                        <pre><code data-trim data-noescape>
+&lt;?php
+session_start();
+$_SESSION = array(); // Limpa as variáveis
+session_destroy(); // Destrói a sessão
+header("location: login.html");
+exit;
+?&gt;
+                        </code></pre>
+                     </div>
+                </section>
+                 <section>
+                    <h4>Avaliação e Próximos Passos</h4>
+                    <p>Agora é sua vez de aplicar os conceitos!</p>
+                    <ul>
+                        <li><strong>Desafio 1:</strong> Criar a página de cadastro com senha hasheada.</li>
+                        <li><strong>Desafio 2:</strong> Exibir o nome do usuário logado no painel.</li>
+                        <li><strong>Desafio 3 (Avançado):</strong> Implementar níveis de acesso (usuário/admin).</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Vídeos para Estudo (Aula 5)</h4>
+                    <ul class="video-list">
+                        <li>
+                            <p><strong>Projeto Completo: Sistema de Login</strong></p>
+                            <a href="https://www.youtube.com/watch?v=ZPBvmEVtAm0" target="_blank">Sistema de Login com PHP e MySQL (PDO)</a>
+                        </li>
+                         <li class="fragment">
+                            <p><strong>Playlist: Sistema de Cadastro/Login Completo</strong></p>
+                            <a href="https://www.youtube.com/playlist?list=PLSHNk_yA5fNjoIRNHV-3FprsN3NWPcnnK" target="_blank">Sistema de Cadastro/Login com PHP - Playlist</a>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js"></script>
+    <script>
+        Reveal.initialize({
+            plugins: [ RevealHighlight ],
+            slideNumber: 'c/t',
+            hash: true,
+        });
+    </script>
+</body>
+</html>
